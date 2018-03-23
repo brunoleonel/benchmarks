@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/orm-builder-plainsql', 'MonitorController@withPatterns');
+Route::get('/single', 'MonitorController@withPatterns');
+Route::get('/relationships', 'MonitorController@relationships');

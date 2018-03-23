@@ -15,7 +15,7 @@ class ClienteBuilderRepository implements ClienteRepositoryInterface
 	public function getAllWithAddress($options=[])
 	{
 		$clientes = DB::table('clientes')
-						->join('enderecos', 'clientes.id', '=', 'enderecos.id_cliente')
+						->leftJoin('enderecos', 'clientes.id', '=', 'enderecos.id_cliente')
 						->get();
 
 		return $clientes;

@@ -15,10 +15,10 @@ class ClientePlainRepository implements ClienteRepositoryInterface
 	public function getAllWithAddress($options=[])
 	{
 		$clientes = DB::select('select * 
-								  from clientes c');
+								  from clientes c
+                                       left join enderecos e
+                                       on e.id_cliente = c.id');
 
-		
-
-		return ;
+		return $clientes;
 	}
 }

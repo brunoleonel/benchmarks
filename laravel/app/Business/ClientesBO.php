@@ -13,4 +13,12 @@ class ClientesBO
 		$todos = $repo->getAll();
 		return $todos;
 	}
+	
+	public function getAllClientsWithAddress($options=[])
+	{
+	    $db = isset($options['db']) ? $options['db'] : 'eloquent';
+	    $repo = (new ClienteRepositoryFactory($db))->make();
+	    $todos = $repo->getAllWithAddress();
+	    return $todos;
+	}
 }

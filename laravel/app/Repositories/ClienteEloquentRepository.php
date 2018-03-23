@@ -14,6 +14,6 @@ class ClienteEloquentRepository implements ClienteRepositoryInterface
 
 	public function getAllWithAddress($options=[])
 	{
-		return Cliente::with('endereco')->get();
+		return Cliente::with('enderecos')->get();
 	}
 }
