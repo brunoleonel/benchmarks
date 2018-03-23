@@ -38,8 +38,9 @@ class MonitorController extends Controller
         $dadosView = [];
         $bo = new ClientesBO();
 
+        $entity = new Cliente();
     	$dadosView['inicioEloquent'] = microtime(true);
-    	$todos = $bo->getAllClients(array('db' => 'eloquent'));
+    	$todos = $bo->getAllClients(array('db' => 'eloquent', 'entity' => $entity));
         $dadosView['finalEloquent'] = microtime(true);
 
         $dadosView['tipoRetornoEloquent'] = get_class($todos);
@@ -77,8 +78,9 @@ class MonitorController extends Controller
         $dadosView = [];
         $bo = new ClientesBO();
 
+        $entity = new Cliente();
         $dadosView['inicioEloquent'] = microtime(true);
-        $todos = $bo->getAllClientsWithAddress(array('db' => 'eloquent'));
+        $todos = $bo->getAllClientsWithAddress(array('db' => 'eloquent', 'entity' => $entity));
         $dadosView['finalEloquent'] = microtime(true);
 
         $dadosView['tipoRetornoEloquent'] = get_class($todos);

@@ -10,7 +10,7 @@ class ClientesBO
 	{
 		$db = isset($options['db']) ? $options['db'] : 'eloquent';
 		$repo = (new ClienteRepositoryFactory($db))->make(); 
-		$todos = $repo->getAll();
+		$todos = $repo->getAll($options);
 		return $todos;
 	}
 	
@@ -18,7 +18,7 @@ class ClientesBO
 	{
 	    $db = isset($options['db']) ? $options['db'] : 'eloquent';
 	    $repo = (new ClienteRepositoryFactory($db))->make();
-	    $todos = $repo->getAllWithAddress();
+	    $todos = $repo->getAllWithAddress($options);
 	    return $todos;
 	}
 }

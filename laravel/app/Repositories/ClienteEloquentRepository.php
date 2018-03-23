@@ -3,17 +3,16 @@
 namespace App\Repositories;
 
 use App\Interfaces\ClienteRepositoryInterface;
-use App\Cliente;
 
 class ClienteEloquentRepository implements ClienteRepositoryInterface
 {
 	public function getAll($options=[])
 	{
-		return Cliente::all();
+		return $options["entity"]->all();
 	}
 
 	public function getAllWithAddress($options=[])
 	{
-		return Cliente::with('enderecos')->get();
+		return $options["entity"]->with('enderecos')->get();
 	}
 }
