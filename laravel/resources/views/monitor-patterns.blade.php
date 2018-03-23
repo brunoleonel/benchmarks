@@ -63,7 +63,7 @@
                                 </li>
                                 <li><?php 
                                         $qtdVezes=round($totalEloquent/$totalBuilder, 2);
-                                        echo '<b>' . $qtdVezes . ' vezes</b> mais rápido que Eloquent';
+                                        echo '<b>' . $qtdVezes . ' vezes</b> mais ' . ($qtdVezes > 1 ? 'rápido' : 'lento') . ' que Eloquent';
                                     ?>
                                 </li>
                             </ul>
@@ -94,7 +94,7 @@
                                 </li>
                                 <li><?php 
                                         $qtdVezes=round($totalEloquent/$totalPlain, 2);
-                                        echo '<b>' . $qtdVezes . ' vezes</b> mais rápido que Eloquent';
+                                        echo '<b>' . $qtdVezes . ' vezes</b> mais ' . ($qtdVezes > 1 ? 'rápido' : 'lento') . ' que Eloquent';
                                     ?>
                                 </li>
                             </ul>
